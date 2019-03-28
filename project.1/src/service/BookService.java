@@ -30,26 +30,13 @@ public class BookService extends BookDao{
 	    Author author = authorservice.find(authorid);
 	    Publisher publisher = publisherservice.find(publisherid);
 	     
-	    Book test = find(id);
+	
 	    		
-    if (id < 0 || (test.getTitle() != null && test.getId() == id)) {
-    	
-    	System.out.println("Book is already on the Data Base or you entered a negative ID."
-    			+ " or the ID you wish to enter is already assigned to an other Book\n");
-     
-    	
-    		   
-        return -1 ;
-		        }
-     
-    
-    
-    else {
-    	
+    if (id > 0 ) {
     	
     	if ( author!= null && publisher != null ) {
- 		   
- 		   
+  		   
+  		   
 	        Book book = new Book();
 	        book.setId(id);
 	        book.setTitle(title);
@@ -67,7 +54,7 @@ public class BookService extends BookDao{
 		   System.out.println("these Author and publisher that you entered need to be created first");
 		      
 		   authorservice.createAuthor(authorid, authorname);
-		   publisherservice.createPublisher(publisherid, publishername, null, null);
+		   publisherservice.createPublisher(publisherid, publishername, "update", "update");
 		   
 	        Book book = new Book();
 	        book.setId(id);
@@ -78,13 +65,29 @@ public class BookService extends BookDao{
 	        create(book);
 	        
 	        System.out.println("you will have to update the publisher : "+publishername+" ID : "+publisherid+", because we don not have the whole informations.");
+    	
+    	
+     
+   
+        return 2;
+        
+		        }
+     
+    
+    
+
+    
+       }
+    else 
+    {
+    	
+    	System.out.println(" you entered a negative ID.\n");
+    	
 	        
-	        return 2;
+	        return -1;
     	
   
       }
-    
-}
     
     }
     
@@ -103,6 +106,7 @@ public class BookService extends BookDao{
 	    Publisher publisher = publisherservice.find(newpublisherid);
     	
         if (book == null ) {
+        	
             return -1;
         } else {
         	
@@ -127,7 +131,7 @@ public class BookService extends BookDao{
      		   System.out.println("these Author and publisher that you entered need to be created first");
  		      
      		   authorservice.createAuthor(newauthorid, newauthorname);
-     		   publisherservice.createPublisher(newpublisherid, newpublishername, null, null);
+     		   publisherservice.createPublisher(newpublisherid, newpublishername, "null", "null");
      		   
     	        book.setId(id);
     	        book.setTitle(newtitle);

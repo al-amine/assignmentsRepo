@@ -245,11 +245,11 @@ public static void menuBook() throws IOException {
              	System.out.println("\n");
              	System.out.println("-------------------------------------\n");
              	System.out.println("\n");
-            	authorservice.showAuthorsAndBooks();
+            	authorservice.showAuthors();
             	System.out.println("\n");
             	System.out.println("-------------------------------------\n");
             	System.out.println("\n");
-             	publisherservice.showPublisherAndBooks();
+             	publisherservice.showPublisher();
              	System.out.println("\n");
              	System.out.println("\n");
              	
@@ -283,9 +283,11 @@ public static void menuBook() throws IOException {
                     
                     bookservice.createBook(bookid, title, authorid, publisherid, authorname, publishername);
                     
+                 
                     Publisher p = publisherservice.find(publisherid);
                     
-                    if (p.getAddress()== null && p.getPhone() == null) {
+                    
+                    if (p.getAddress().equals("update") && p.getPhone().equals("update")) {
                     	
                     System.out.print(" Now, would you please provide me with the full address and phone number of the new publisher : "+publishername);
                  	System.out.println("\n");
@@ -308,11 +310,11 @@ public static void menuBook() throws IOException {
              case 2:  
             	 
 
-            	authorservice.showAuthorsAndBooks();
+            	authorservice.showAuthors();
             	System.out.println("\n");
             	System.out.println("-------------------------------------\n");
             	System.out.println("\n");
-             	publisherservice.showPublisherAndBooks();
+             	publisherservice.showPublisher();
              	System.out.println("\n");
              	
                 System.out.print("Make sure the Author and the Publisher of the book you wish to update are on those lists above.\n");
@@ -352,7 +354,7 @@ public static void menuBook() throws IOException {
                     
                     Publisher p1 = publisherservice.find(newpublisherid);
                     
-                    if (p1.getAddress()== null && p1.getPhone() == null) {
+                    if (p1.getAddress().equals("update") && p1.getPhone().equals("update")) {
                     	
                         System.out.print(" Now, would you please provide me with the full address and phone number of the new publisher : "+newpublishername);
                      	System.out.println("\n");

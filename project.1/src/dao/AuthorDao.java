@@ -14,7 +14,7 @@ import bean.Author;
 public class AuthorDao implements Dao<Author> {
 
 
-		private static String separator = "-";
+		private static String separator = ",";
 		private static String filepath = "./resources/authors";
 
 		// creates new Author in the file

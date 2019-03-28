@@ -18,12 +18,11 @@ public class AuthorService extends AuthorDao {
 	
 	   public int createAuthor(int id, String name) throws IOException {
 		   
-		   Author test = find(id);
+
 		   
-	        if (id < 0 || (test.getName() != null && test.getId() == id) ) {
+	        if (id < 0 ) {
 	        	
-	        	System.out.println("Author is already on the Data Base or you entered a negative ID."
-	        			+ " or the ID you wish to enter is already assigned to an other Author\n");
+	        	System.out.println(" you entered a negative ID.");
 	        	 
 	            return -1;
 	            
@@ -51,8 +50,6 @@ public class AuthorService extends AuthorDao {
 	        	
 	            author.setId(id);
 	            author.setName(newName);
-	        	
-//	            Author update = new Author(id, newName);
 	            update(author);
 	            System.out.println("Author Updated");
 	            return 1;

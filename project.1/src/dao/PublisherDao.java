@@ -14,7 +14,7 @@ import bean.Publisher;
 public class PublisherDao  implements Dao<Publisher>{
 
 
-		private static String separator = "-";
+		private static String separator = ",";
 		private static String filepath = "./resources/publishers";
 
 		// creates new Publisher in the file

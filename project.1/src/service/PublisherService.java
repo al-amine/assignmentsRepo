@@ -21,11 +21,10 @@ public class PublisherService  extends PublisherDao{
 	
 	   public int createPublisher(int id, String name,String address, String phone) throws IOException {
 		   
-		   Publisher test = find(id);
-	        if (id < 0 || (test.getName() != null && test.getId() == id)) {
+
+	        if (id < 0 ) {
 	        	
-	        	System.out.println("Publisher is already on the Data Base or you entered a negative ID."
-	        			+ " or the ID you wish to enter is already assigned to an other Publisher\n");
+	        	System.out.println("you entered a negative ID.\n");
 	            return -1;
 	            
 	        } 
@@ -37,6 +36,7 @@ public class PublisherService  extends PublisherDao{
 	            publisher.setPhone(phone);
 
 	            create(publisher);
+	            System.out.println("Publisher Created");
 	            return 1;
 	        }
 	    }
@@ -56,8 +56,7 @@ public class PublisherService  extends PublisherDao{
 	        	publisher.setAddress(newaddress);
 	        	publisher.setPhone(newphone);
 	        	
-//	            Publisher update = new Publisher(id, newName,newaddress,newphone);
-	        	
+
 	            update(publisher);
 	            
 	            System.out.println("Publisher Updated");

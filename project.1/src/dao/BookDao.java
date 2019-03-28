@@ -15,7 +15,7 @@ import bean.Book;
 public class BookDao implements Dao<Book> {
 	
 
-	private static String separator = "-";
+	private static String separator = ",";
 	private static String filepath = "./resources/books";
 
 	// creates new Publisher in the file
