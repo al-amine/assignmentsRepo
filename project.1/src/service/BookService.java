@@ -172,7 +172,7 @@ public class BookService extends BookDao{
         	
             delete(book1.getId());
             
-            System.out.println("Book Deleted");
+            System.out.println("Book Deleted\n");
             
             return 1;
         }
@@ -190,11 +190,6 @@ public int showBooks() throws FileNotFoundException, IOException{
         	
         	System.out.println("Here Are the list of the books Available in our Data Base for now : ");
         	
-//           for (Book b : books) {
-//        	   
-//        	   System.out.println("Book Title : "+b.getTitle()+", and its Database referential ID  is :"+b.getId());
-//        	   
-//		    }
            
        	books
 		.stream()

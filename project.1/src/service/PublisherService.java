@@ -36,7 +36,7 @@ public class PublisherService  extends PublisherDao{
 	            publisher.setPhone(phone);
 
 	            create(publisher);
-	            System.out.println("Publisher Created");
+	            System.out.println("Publisher Created\n");
 	            return 1;
 	        }
 	    }

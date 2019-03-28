@@ -22,7 +22,7 @@ public class AuthorService extends AuthorDao {
 		   
 	        if (id < 0 ) {
 	        	
-	        	System.out.println(" you entered a negative ID.");
+	        	System.out.println(" you entered a negative ID.\n");
 	        	 
 	            return -1;
 	            

@@ -312,7 +312,7 @@ public static void menuBook() throws IOException {
 
             	authorservice.showAuthors();
             	System.out.println("\n");
-            	System.out.println("-------------------------------------\n");
+            	System.out.println("--------------------------------------\n");
             	System.out.println("\n");
              	publisherservice.showPublisher();
              	System.out.println("\n");
